@@ -13,8 +13,6 @@ namespace MacDoner
 {
     public partial class Form_ListeAuteur : Form
     {
-        private string connexionString = "server=serverbtssiojv.ddns.net;port=3306;Database=ulker_biblio;Uid=ulker;password=ulker";
-        private MySqlConnection maCo;
         private MySqlCommand maRequete;
         private MySqlDataReader monReader;
         public Form_ListeAuteur()
@@ -32,9 +30,9 @@ namespace MacDoner
         {
             try
             {
-                maCo = new MySqlConnection(connexionString);
-                maCo.Open();
-                maRequete = maCo.CreateCommand();
+                dgvListeAuteur.Rows.Clear();
+                Connexion.MaCo.Open();
+                maRequete = Connexion.MaCo.CreateCommand();
                 maRequete.CommandText = "select * from auteur order by nom";
                 monReader = maRequete.ExecuteReader();
                 while (monReader.Read())
@@ -55,10 +53,35 @@ namespace MacDoner
             finally
             {
                 monReader.Close();
-                maCo.Close();
+                Connexion.MaCo.Close();
             }
         }
 
+        private void btnAfficher_Click(object sender, EventArgs e)
+        {
+            int element = Convert.ToInt16(dgvListeAuteur.SelectedRows[0].Cells[0].Value.ToString());
+            ficheAuteur frm = new ficheAuteur(false, element);
+            frm.Show();
+        }
 
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            int element = Convert.ToInt16(dgvListeAuteur.SelectedRows[0].Cells[0].Value.ToString());
+            ficheAuteur frm = new ficheAuteur(true, element);
+            frm.Show();
+            RemplirListe();
+            dgvListeAuteur.Refresh();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RemplirListe();
+            dgvListeAuteur.Refresh();
+        }
+
+        private void btnSuprimer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

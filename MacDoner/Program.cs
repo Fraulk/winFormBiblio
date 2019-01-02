@@ -16,7 +16,7 @@ namespace MacDoner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_ListeAuteur());
+            Application.Run(new Menu());
         }
     }
 }

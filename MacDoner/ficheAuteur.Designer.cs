@@ -43,27 +43,30 @@
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(54, 48);
+            this.lblNum.Location = new System.Drawing.Point(81, 74);
+            this.lblNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(44, 13);
+            this.lblNum.Size = new System.Drawing.Size(65, 20);
             this.lblNum.TabIndex = 0;
             this.lblNum.Text = "Numéro";
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(54, 99);
+            this.lblNom.Location = new System.Drawing.Point(81, 152);
+            this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(29, 13);
+            this.lblNom.Size = new System.Drawing.Size(42, 20);
             this.lblNom.TabIndex = 1;
             this.lblNom.Text = "Nom";
             // 
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(54, 154);
+            this.lblPrenom.Location = new System.Drawing.Point(81, 237);
+            this.lblPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(43, 13);
+            this.lblPrenom.Size = new System.Drawing.Size(64, 20);
             this.lblPrenom.TabIndex = 2;
             this.lblPrenom.Text = "Prénom";
             this.lblPrenom.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,63 +74,73 @@
             // lblNation
             // 
             this.lblNation.AutoSize = true;
-            this.lblNation.Location = new System.Drawing.Point(54, 213);
+            this.lblNation.Location = new System.Drawing.Point(81, 328);
+            this.lblNation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNation.Name = "lblNation";
-            this.lblNation.Size = new System.Drawing.Size(57, 13);
+            this.lblNation.Size = new System.Drawing.Size(84, 20);
             this.lblNation.TabIndex = 3;
             this.lblNation.Text = "Nationalité";
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(140, 45);
+            this.txtNum.Enabled = false;
+            this.txtNum.Location = new System.Drawing.Point(210, 69);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(100, 20);
+            this.txtNum.Size = new System.Drawing.Size(148, 26);
             this.txtNum.TabIndex = 4;
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(140, 96);
+            this.txtNom.Location = new System.Drawing.Point(210, 148);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 20);
+            this.txtNom.Size = new System.Drawing.Size(148, 26);
             this.txtNom.TabIndex = 5;
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(140, 151);
+            this.txtPrenom.Location = new System.Drawing.Point(210, 232);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(100, 20);
+            this.txtPrenom.Size = new System.Drawing.Size(148, 26);
             this.txtPrenom.TabIndex = 6;
             // 
             // txtNation
             // 
-            this.txtNation.Location = new System.Drawing.Point(140, 210);
+            this.txtNation.Location = new System.Drawing.Point(210, 323);
+            this.txtNation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNation.Name = "txtNation";
-            this.txtNation.Size = new System.Drawing.Size(100, 20);
+            this.txtNation.Size = new System.Drawing.Size(148, 26);
             this.txtNation.TabIndex = 7;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(57, 279);
+            this.btnAnnuler.Location = new System.Drawing.Point(86, 429);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnuler.Size = new System.Drawing.Size(112, 35);
             this.btnAnnuler.TabIndex = 8;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(165, 279);
+            this.btnValider.Location = new System.Drawing.Point(248, 429);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(75, 23);
+            this.btnValider.Size = new System.Drawing.Size(112, 35);
             this.btnValider.TabIndex = 9;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // ficheAuteur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 351);
+            this.ClientSize = new System.Drawing.Size(459, 540);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.txtNation);
@@ -138,6 +151,7 @@
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.lblNum);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ficheAuteur";
             this.Text = "ficheAuteur";
             this.ResumeLayout(false);
