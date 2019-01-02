@@ -80,6 +80,7 @@
             this.genresToolStripMenuItem.Name = "genresToolStripMenuItem";
             this.genresToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.genresToolStripMenuItem.Text = "Genres";
+            this.genresToolStripMenuItem.Click += new System.EventHandler(this.genresToolStripMenuItem_Click);
             // 
             // adhérentsToolStripMenuItem
             // 

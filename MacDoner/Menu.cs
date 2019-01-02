@@ -27,5 +27,11 @@ namespace MacDoner
             Form_ListeAuteur frm = new Form_ListeAuteur();
             frm.Show();
         }
+
+        private void genresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeGenre lgr = new ListeGenre();
+            lgr.Show();
+        }
     }
 }

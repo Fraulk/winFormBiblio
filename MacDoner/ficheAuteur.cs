@@ -16,37 +16,43 @@ namespace MacDoner
         private MySqlCommand maRequete;
         private MySqlDataReader monReader;
         private int numAuteur;
-        public ficheAuteur(bool edit, int num)
+        private bool addMode = false;
+        public ficheAuteur(bool edit, int num, bool add)
         {
             InitializeComponent();
             numAuteur = num;
+            addMode = add;
             try
             {
                 Connexion.MaCo.Open();
                 maRequete = Connexion.MaCo.CreateCommand();
-                maRequete.CommandText = "select * from auteur where num=@paramNum";
-                maRequete.Prepare();
-                maRequete.Parameters.AddWithValue("@paramNum", num);
-                monReader = maRequete.ExecuteReader();
-                if (monReader.Read())
+
+                if (!add)
                 {
-                    txtNum.Text = num.ToString();
-                    txtNom.Text = monReader["nom"].ToString();
-                    txtPrenom.Text = monReader["prenom"].ToString();
-                    txtNation.Text = monReader["nationalite"].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Erreur: auteur introuvable");
-                }
-                if(edit == false)
-                {
-                    txtNom.Enabled = false;
-                    txtPrenom.Enabled = false;
-                    txtNation.Enabled = false;
-                    btnAnnuler.Text = "Fermer";
-                    btnValider.Enabled = false;
-                }
+                    maRequete.CommandText = "select * from auteur where num=@paramNum";
+                    maRequete.Prepare();
+                    maRequete.Parameters.AddWithValue("@paramNum", num);
+                    monReader = maRequete.ExecuteReader();
+                    if (monReader.Read())
+                    {
+                        txtNum.Text = num.ToString();
+                        txtNom.Text = monReader["nom"].ToString();
+                        txtPrenom.Text = monReader["prenom"].ToString();
+                        txtNation.Text = monReader["nationalite"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur: auteur introuvable");
+                    }
+                    if (edit == false)
+                    {
+                        txtNom.Enabled = false;
+                        txtPrenom.Enabled = false;
+                        txtNation.Enabled = false;
+                        btnAnnuler.Text = "Fermer";
+                        btnValider.Enabled = false;
+                    }
+                }                
             }
             catch (Exception e)
             {
@@ -55,7 +61,10 @@ namespace MacDoner
             }
             finally
             {
-                monReader.Close();
+                if (!add)
+                {
+                    monReader.Close();
+                }
                 Connexion.MaCo.Close();
             }
         }
@@ -69,24 +78,40 @@ namespace MacDoner
         {
             if (ControleSaisie() == true)
             {
-                maRequete.CommandText = "update auteur set " +
-                    "nom=@paramNom, prenom=@paramPrenom, nationalite=@paramNation where num=@paramNum";
-                maRequete.Parameters.Clear();
-                maRequete.Parameters.AddWithValue("@paramNom", txtNom.Text);
-                maRequete.Parameters.AddWithValue("@paramPrenom", txtPrenom.Text);
-                maRequete.Parameters.AddWithValue("@paramNation", txtNation.Text);
-                maRequete.Parameters.AddWithValue("@paramNum", numAuteur);
+                if (!addMode)
+                {
+                    maRequete.CommandText = "update auteur set " +
+                        "nom=@paramNom, prenom=@paramPrenom, nationalite=@paramNation where num=@paramNum";
+                    maRequete.Parameters.Clear();
+                    maRequete.Parameters.AddWithValue("@paramNom", txtNom.Text);
+                    maRequete.Parameters.AddWithValue("@paramPrenom", txtPrenom.Text);
+                    maRequete.Parameters.AddWithValue("@paramNation", txtNation.Text);
+                    maRequete.Parameters.AddWithValue("@paramNum", numAuteur);
+                }
+                else
+                {
+                    maRequete.CommandText = "insert into auteur values('"
+                        + numAuteur + "', '"
+                        + txtNom.Text + "', '"
+                        + txtPrenom.Text + "', '"
+                        + txtNation.Text + "')";
+                    /*maRequete.Parameters.AddWithValue("@paramNum", numAuteur);                //les params ne fonctionnaient pas
+                    maRequete.Parameters.AddWithValue("@paramNom", txtNom.Text);
+                    maRequete.Parameters.AddWithValue("@paramPrenom", txtPrenom.Text);
+                    maRequete.Parameters.AddWithValue("@paramNation", txtNation.Text);*/
+                }
+                
                 try
                 {
                     Connexion.MaCo.Open();
                     int resultat = maRequete.ExecuteNonQuery();
                     if(resultat > 0)
                     {
-                        MessageBox.Show("L'auteur a bien ete maj");
+                        MessageBox.Show("L'auteur a bien ete mis à jour/ajouté");
                     }
                     else
                     {
-                        MessageBox.Show("Une erreur s'est produite, l'auteur n'a pas ete maj");
+                        MessageBox.Show("Une erreur s'est produite");
                     }
                 }
                 catch (Exception ex)
