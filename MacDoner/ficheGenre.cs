@@ -46,7 +46,7 @@ namespace MacDoner
                     {
                         txtLibelle.Enabled = false;
                         btnAnnuler.Text = "Fermer";
-                        btnValider.Enabled = false;
+                        btnValider.Hide();
                     }
                 }
             }
@@ -84,9 +84,9 @@ namespace MacDoner
                 }
                 else
                 {
-                    maRequete.CommandText = "insert into genre values('"
-                        + numGenre + "', '"
-                        + txtLibelle.Text + "')";
+                    maRequete.CommandText = "insert into genre values(@paramNum, @paramLibelle)";
+                    maRequete.Parameters.AddWithValue("@paramNum", numGenre);
+                    maRequete.Parameters.AddWithValue("@paramLibelle", txtLibelle.Text);
                 }
 
                 try

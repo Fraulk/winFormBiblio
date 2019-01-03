@@ -71,6 +71,12 @@
     <Compile Include="ficheGenre.Designer.cs">
       <DependentUpon>ficheGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="ficheLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ficheLivre.Designer.cs">
+      <DependentUpon>ficheLivre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="ListeGenre.Designer.cs">
       <DependentUpon>ListeGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeLivre.Designer.cs">
+      <DependentUpon>ListeLivre.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -103,11 +115,17 @@
     <EmbeddedResource Include="ficheGenre.resx">
       <DependentUpon>ficheGenre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ficheLivre.resx">
+      <DependentUpon>ficheLivre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListeGenre.resx">
       <DependentUpon>ListeGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeLivre.resx">
+      <DependentUpon>ListeLivre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

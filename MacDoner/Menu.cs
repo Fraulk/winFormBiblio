@@ -33,5 +33,16 @@ namespace MacDoner
             ListeGenre lgr = new ListeGenre();
             lgr.Show();
         }
+
+        private void adhérentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void livresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeLivre llvr = new ListeLivre();
+            llvr.Show();
+        }
     }
 }

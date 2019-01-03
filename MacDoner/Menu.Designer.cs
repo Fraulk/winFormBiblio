@@ -35,6 +35,7 @@
             this.genresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adhérentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prêtsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.auteurToolStripMenuItem,
             this.genresToolStripMenuItem,
             this.adhérentsToolStripMenuItem,
-            this.livresToolStripMenuItem});
+            this.livresToolStripMenuItem,
+            this.prêtsToolStripMenuItem});
             this.basesToolStripMenuItem.Name = "basesToolStripMenuItem";
             this.basesToolStripMenuItem.Size = new System.Drawing.Size(68, 29);
             this.basesToolStripMenuItem.Text = "Bases";
@@ -87,12 +89,20 @@
             this.adhérentsToolStripMenuItem.Name = "adhérentsToolStripMenuItem";
             this.adhérentsToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.adhérentsToolStripMenuItem.Text = "Adhérents";
+            this.adhérentsToolStripMenuItem.Click += new System.EventHandler(this.adhérentsToolStripMenuItem_Click);
             // 
             // livresToolStripMenuItem
             // 
             this.livresToolStripMenuItem.Name = "livresToolStripMenuItem";
             this.livresToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.livresToolStripMenuItem.Text = "Livres";
+            this.livresToolStripMenuItem.Click += new System.EventHandler(this.livresToolStripMenuItem_Click);
+            // 
+            // prêtsToolStripMenuItem
+            // 
+            this.prêtsToolStripMenuItem.Name = "prêtsToolStripMenuItem";
+            this.prêtsToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.prêtsToolStripMenuItem.Text = "Prêts";
             // 
             // Menu
             // 
@@ -119,5 +129,6 @@
         private System.Windows.Forms.ToolStripMenuItem genresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adhérentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem livresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prêtsToolStripMenuItem;
     }
 }

@@ -50,7 +50,7 @@ namespace MacDoner
                         txtPrenom.Enabled = false;
                         txtNation.Enabled = false;
                         btnAnnuler.Text = "Fermer";
-                        btnValider.Enabled = false;
+                        btnValider.Hide();
                     }
                 }                
             }
@@ -90,15 +90,11 @@ namespace MacDoner
                 }
                 else
                 {
-                    maRequete.CommandText = "insert into auteur values('"
-                        + numAuteur + "', '"
-                        + txtNom.Text + "', '"
-                        + txtPrenom.Text + "', '"
-                        + txtNation.Text + "')";
-                    /*maRequete.Parameters.AddWithValue("@paramNum", numAuteur);                //les params ne fonctionnaient pas
+                    maRequete.CommandText = "insert into auteur values(@paramNum, @paramNom, @paramPrenom, @paramNation)";
+                    maRequete.Parameters.AddWithValue("@paramNum", numAuteur);
                     maRequete.Parameters.AddWithValue("@paramNom", txtNom.Text);
                     maRequete.Parameters.AddWithValue("@paramPrenom", txtPrenom.Text);
-                    maRequete.Parameters.AddWithValue("@paramNation", txtNation.Text);*/
+                    maRequete.Parameters.AddWithValue("@paramNation", txtNation.Text);
                 }
                 
                 try
