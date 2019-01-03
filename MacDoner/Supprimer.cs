@@ -14,19 +14,21 @@ namespace MacDoner
     public partial class Supprimer : Form
     {
         private MySqlCommand maRequete;
-        int numAuteur;
-        public Supprimer(int num)
+        private int num;
+        private string table;
+        public Supprimer(int numm, string tablee)
         {
             InitializeComponent();
-            numAuteur = num;
+            num = numm;
+            table = tablee;
         }
 
         private void btnOui_Click(object sender, EventArgs e)
         {
             maRequete = Connexion.MaCo.CreateCommand();
-            maRequete.CommandText = "Delete From auteur where num=@paramNum";
+            maRequete.CommandText = "Delete From " + table + " where num=@paramNum";    //impossible de faire avec param car ce dernier ajoute des apostrophe, ce qui provoque une erreur SQL
             maRequete.Parameters.Clear();
-            maRequete.Parameters.AddWithValue("@paramNum", numAuteur);
+            maRequete.Parameters.AddWithValue("@paramNum", num);
             try
             {
                 Connexion.MaCo.Open();

@@ -45,6 +45,15 @@
             // 
             this.dgvListeAuteur.AllowUserToAddRows = false;
             this.dgvListeAuteur.AllowUserToDeleteRows = false;
+            this.dgvListeAuteur.AllowUserToResizeColumns = false;
+            this.dgvListeAuteur.AllowUserToResizeRows = false;
+            this.dgvListeAuteur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListeAuteur.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListeAuteur.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListeAuteur.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgvListeAuteur.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvListeAuteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListeAuteur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
@@ -57,7 +66,7 @@
             this.dgvListeAuteur.Name = "dgvListeAuteur";
             this.dgvListeAuteur.ReadOnly = true;
             this.dgvListeAuteur.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListeAuteur.Size = new System.Drawing.Size(825, 655);
+            this.dgvListeAuteur.Size = new System.Drawing.Size(973, 660);
             this.dgvListeAuteur.TabIndex = 0;
             // 
             // Num
@@ -71,7 +80,6 @@
             this.Nom.HeaderText = "Nom";
             this.Nom.Name = "Nom";
             this.Nom.ReadOnly = true;
-            this.Nom.Width = 200;
             // 
             // Prenom
             // 
@@ -87,10 +95,11 @@
             // 
             // btnAfficher
             // 
-            this.btnAfficher.Location = new System.Drawing.Point(852, 18);
+            this.btnAfficher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAfficher.Location = new System.Drawing.Point(1019, 18);
             this.btnAfficher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAfficher.Name = "btnAfficher";
-            this.btnAfficher.Size = new System.Drawing.Size(112, 35);
+            this.btnAfficher.Size = new System.Drawing.Size(133, 47);
             this.btnAfficher.TabIndex = 1;
             this.btnAfficher.Text = "Afficher";
             this.btnAfficher.UseVisualStyleBackColor = true;
@@ -98,10 +107,11 @@
             // 
             // btnSuprimer
             // 
-            this.btnSuprimer.Location = new System.Drawing.Point(852, 108);
+            this.btnSuprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuprimer.Location = new System.Drawing.Point(1019, 153);
             this.btnSuprimer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSuprimer.Name = "btnSuprimer";
-            this.btnSuprimer.Size = new System.Drawing.Size(112, 35);
+            this.btnSuprimer.Size = new System.Drawing.Size(133, 49);
             this.btnSuprimer.TabIndex = 3;
             this.btnSuprimer.Text = "Suprimer";
             this.btnSuprimer.UseVisualStyleBackColor = true;
@@ -109,10 +119,11 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(852, 152);
+            this.btnAjouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAjouter.Location = new System.Drawing.Point(1019, 226);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(112, 35);
+            this.btnAjouter.Size = new System.Drawing.Size(133, 47);
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -120,10 +131,11 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(852, 63);
+            this.btnModifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModifier.Location = new System.Drawing.Point(1019, 83);
             this.btnModifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(112, 35);
+            this.btnModifier.Size = new System.Drawing.Size(133, 47);
             this.btnModifier.TabIndex = 5;
             this.btnModifier.Text = "Modifer";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -131,10 +143,11 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(852, 197);
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(1019, 299);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(112, 35);
+            this.btnRefresh.Size = new System.Drawing.Size(133, 43);
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "Rafraîchir";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -144,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1305, 692);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);

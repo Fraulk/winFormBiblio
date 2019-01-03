@@ -86,7 +86,7 @@ namespace MacDoner
         private void btnSuprimer_Click(object sender, EventArgs e)
         {
             int element = Convert.ToInt16(dgvListeAuteur.SelectedRows[0].Cells[0].Value.ToString());
-            Supprimer suppr = new Supprimer(element);
+            Supprimer suppr = new Supprimer(element, "auteur");
             suppr.Show();
             RemplirListe();
             dgvListeAuteur.Refresh();
